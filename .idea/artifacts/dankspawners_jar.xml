@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="dankspawners:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/dankspawners_jar</output-path>
+    <root id="archive" name="dankspawners.jar">
+      <element id="module-output" name="dankspawners" />
+    </root>
+  </artifact>
+</component>
