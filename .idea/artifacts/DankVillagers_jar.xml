@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="DankVillagers:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/DankVillagers_jar</output-path>
-    <root id="archive" name="DankVillagers.jar">
-      <element id="module-output" name="DankVillagers" />
-    </root>
-  </artifact>
-</component>
