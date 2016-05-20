@@ -1,4 +1,6 @@
-package com.faceguy.dankspawners;
+package com.faceguy.dankspawners.Listeners;
+
+import com.faceguy.dankspawners.DankSpawners;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -13,6 +15,13 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class DankSpawnerListeners implements Listener {
+
+    private final DankSpawners plugin;
+
+    public DankSpawnerListeners(DankSpawners plugin) {
+        this.plugin = plugin;
+    }
+
     @EventHandler (priority = EventPriority.MONITOR)
     public void onPlayerMineSpawner(BlockBreakEvent evt) {
         if (evt.isCancelled()) {
@@ -31,7 +40,7 @@ public class DankSpawnerListeners implements Listener {
         evt.getBlock().getDrops().clear();
         CreatureSpawner s = (CreatureSpawner)evt.getBlock().getState();
         ItemStack item = DankSpawnerCommands.getSpawnerItem(1, s.getSpawnedType());
-        evt.getBlock().getDrops().add(item);
+        evt.getBlock().getWorld().dropItemNaturally(evt.getBlock().getLocation(), item);
     }
 
     @EventHandler

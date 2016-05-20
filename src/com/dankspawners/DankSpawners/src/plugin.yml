@@ -1,0 +1,9 @@
+name: DankSpawners
+version: 0.0.1
+author: KyleKattrein
+main: com.faceguy.dankspawners.DankSpawners
+commands:
+  ds:
+    description: Base command fro DankSpawners
+    aliases: ss
+    usage: /ds give [player] [entity] (amount)

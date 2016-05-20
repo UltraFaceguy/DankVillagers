@@ -1,4 +1,4 @@
-package com.faceguy.dankspawners;
+package com.faceguy.dankspawners.Listeners;
 
 import java.util.ArrayList;
 import org.bukkit.Bukkit;
@@ -16,16 +16,14 @@ public class DankSpawnerCommands implements CommandExecutor {
     public boolean onCommand(CommandSender s, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("ds")) {
             if (args.length == 0) {
-                s.sendMessage(ChatColor.GREEN + "Usage: /ds give [player] [entity] (amount)");
-                return true;
+                return false;
             }
             if (args.length < 3) {
                 s.sendMessage(ChatColor.GREEN + "Usage: /ds " + ChatColor.GRAY + "give [player] [entity] (amount)");
-                return true;
+                return false;
             }
             if (!args[0].equalsIgnoreCase("give")) {
-                s.sendMessage(ChatColor.GREEN + "Usage: /ds " + ChatColor.GRAY + "give [player] [entity] (amount)");
-                return true;
+                return false;
             }
             if (!s.hasPermission("dankspawners.give")) {
                 s.sendMessage(ChatColor.RED + "You do not have permission to use this command!");
@@ -46,7 +44,7 @@ public class DankSpawnerCommands implements CommandExecutor {
                 amount = Integer.valueOf(args[3]);
             }
             giveSpawner(player, type, amount);
-            s.sendMessage(ChatColor.GREEN + "Successfully gave " + player + " " + amount + " " + type + " spawners!");
+            s.sendMessage(ChatColor.GREEN + "Gave " + player.getName() + " " + amount + " " + type + " " + "spawner(s)!");
         }
         return true;
     }
