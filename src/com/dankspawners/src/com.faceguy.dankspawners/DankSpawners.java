@@ -1,5 +1,6 @@
 package com.faceguy.dankspawners;
 
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
@@ -8,8 +9,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class DankSpawners extends JavaPlugin implements Listener{
 
     public void onEnable() {
-        this.getServer().getPluginManager().registerEvents(this, this);
-        this.getCommand("ds").setExecutor(this);
+        this.getServer().getPluginManager().registerEvents((Listener) this, (Plugin)this);
+        this.getCommand("ds").setExecutor((CommandExecutor) this);
         this.getLogger().info("DankSpawners Enabled!");
     }
 

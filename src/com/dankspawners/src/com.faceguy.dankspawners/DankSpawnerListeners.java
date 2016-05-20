@@ -15,6 +15,9 @@ import org.bukkit.inventory.ItemStack;
 public class DankSpawnerListeners implements Listener {
     @EventHandler (priority = EventPriority.MONITOR)
     public void onPlayerMineSpawner(BlockBreakEvent evt) {
+        if (evt.isCancelled()) {
+            return;
+        }
         if (!evt.getBlock().getType().equals(Material.MOB_SPAWNER)) {
             return;
         }
